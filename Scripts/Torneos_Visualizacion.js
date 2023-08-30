@@ -131,6 +131,8 @@ function MostrarTorneos() {
         divDetalleTorneo.appendChild(divCuadroTorneo);
     }
 
+    document.getElementById('divTorneo' + (Torneos[Torneos.length - 1].ID)).click();
+
 }    
 
 function SeleccionarTorneo(TorneoID) {
