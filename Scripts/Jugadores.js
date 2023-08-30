@@ -10,13 +10,13 @@ function InicializarJugadores() {
 
     var Jugador2 = {};
     Jugador2.ID = 2;
-    Jugador2.Nombre = 'Alberto';
+    Jugador2.Nombre = 'Alberto Baldoménico';
     Jugador2.NombreImagen = null;
     Jugadores.push(Jugador2);
 
     var Jugador3 = {};
     Jugador3.ID = 3;
-    Jugador3.Nombre = 'Leo';
+    Jugador3.Nombre = 'Leonardo Piovesan';
     Jugador3.NombreImagen = null;
     Jugadores.push(Jugador3);
 
