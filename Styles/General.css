@@ -1,0 +1,50 @@
+
+.Encabezado{
+	padding:10px;
+	text-align:center;
+	background-color:#f8f8f8;
+}
+
+.Tabs {
+	padding: 10px;
+	border-bottom: #c1c1c1;
+	border-top: #c1c1c1;
+	border-style:solid;
+	border-width:thin;
+	border-left:none;
+	border-right:none;
+}
+
+.Tab{
+
+	color:#656565;
+	cursor:pointer;
+	display:inline-block;
+	margin:15px;
+	font-size:18px;
+	font-family:'roboto';
+}
+
+.Tab:hover{
+	color:#9c9c9c;	
+	border-bottom-style:solid;
+	border-bottom-width:thin;
+	padding-bottom:5px;
+}
+
+.TabSeleccionado {
+	color: #4b6fb7;
+	cursor: pointer;
+	display: inline-block;
+	margin: 15px;
+	font-size: 18px;
+	font-family: 'roboto';
+
+	border-bottom-style: solid;
+	border-bottom-width: 2px;
+	padding-bottom: 5px;
+}
+
+.ContenidoTab{
+	padding:30px;
+}

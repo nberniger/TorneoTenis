@@ -1,0 +1,10 @@
+
+
+.Torneo{
+    cursor:pointer;
+
+}
+
+.Torneo:hover{
+    background-color:#f5f5f5;
+}
