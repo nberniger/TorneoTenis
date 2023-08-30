@@ -120,3 +120,41 @@ function ObtenerEquiposTorneo(TorneoID) {
     return Equipos;
 
 }
+
+function ObtenerCantidadPartidosJugadosTorneoJugador(TorneoID,JugadorID) {
+
+    var Cantidad = 0;
+
+    for (var i = 0; i < Torneos.length; i++) {
+
+        if (Torneos[i].ID == TorneoID) {
+            for (var j = 0; j < Torneos[i].Partidos.length; j++) {
+                if (JugadorJugoPartido(Torneos[i].Partidos[j],JugadorID))                        
+                {
+                    Cantidad++;
+                }
+            }
+        }
+        
+
+    }
+
+    return Cantidad;
+
+}
+
+
+function JugadorJugoPartido(Partido,JugadorID) {
+    if (
+        (
+            Partido.Equipo1Jugador1 == JugadorID ||
+            Partido.Equipo1Jugador2 == JugadorID ||
+            Partido.Equipo2Jugador1 == JugadorID ||
+            Partido.Equipo2Jugador2 == JugadorID
+        ) && (Partido.Set1_Puntos_Equipo1 > 0 || Partido.Set1_Puntos_Equipo2 > 0)
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+}

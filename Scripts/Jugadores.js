@@ -81,6 +81,12 @@ function MostrarJugadores() {
         CeldaPartidosGanados.className = 'CeldaTablaJugadores';
         CeldaTorneosGanados.className = 'CeldaTablaJugadores';
 
+        CeldaPartidosJugados.innerHTML = 0;
+        CeldaGamesGanados.innerHTML = 0;
+        CeldaSetsGanados.innerHTML = 0;
+        CeldaPartidosGanados.innerHTML = 0;
+        CeldaTorneosGanados.innerHTML = 0;
+
         //var divJugador = document.createElement('div');
 
         //divJugador.innerHTML = document.getElementById('divPlantillaJugador').innerHTML;
@@ -118,6 +124,11 @@ function MostrarEquipos() {
         CeldaPartidosGanados.className = 'CeldaTablaJugadores';
         CeldaTorneosGanados.className = 'CeldaTablaJugadores';
 
+        CeldaPartidosJugados.innerHTML = 0;
+        CeldaGamesGanados.innerHTML = 0;
+        CeldaSetsGanados.innerHTML = 0;
+        CeldaPartidosGanados.innerHTML = 0;
+        CeldaTorneosGanados.innerHTML = 0;
     }
 
 }
