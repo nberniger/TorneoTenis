@@ -3,6 +3,7 @@
 	padding:10px;
 	text-align:center;
 	background-color:#f8f8f8;
+	font-size:18px
 }
 
 .Tabs {
@@ -25,12 +26,13 @@
 	font-family:'roboto';
 }
 
-.Tab:hover{
-	color:#9c9c9c;	
-	border-bottom-style:solid;
-	border-bottom-width:thin;
-	padding-bottom:5px;
-}
+	.Tab:hover {
+		color: #9c9c9c;
+		border-bottom-style: solid;
+		border-bottom-width: thin;
+		padding-bottom: 5px;
+		cursor: pointer;
+	}
 
 .TabSeleccionado {
 	color: #4b6fb7;
@@ -46,5 +48,5 @@
 }
 
 .ContenidoTab{
-	padding:30px;
+	padding:15px;
 }

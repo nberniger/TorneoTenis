@@ -8,17 +8,18 @@
 
     <script src="./Scripts/General.js"></script>
     <script src="./Scripts/Jugadores.js"></script>
-    <script src="./Scripts/Torneos.js"></script>
+    <script src="./Scripts/Torneos_Datos.js"></script>
+    <script src="./Scripts/Torneos_Visualizacion.js"></script>
+    <script src="./Scripts/Tabs.js"></script>
 
     <link rel="stylesheet" href="./Styles/General.css">
     <link rel="stylesheet" href="./Styles/Torneos.css">
+    <link rel="stylesheet" href="./Styles/Partidos.css">
+    <link rel="stylesheet" href="./Styles/Jugadores.css">
 
 </head>
 
 <style>
-
-
-
 </style>
 
 <script>
@@ -37,7 +38,7 @@
 <div style="font-family:'roboto'">
 
     <div class="Encabezado">
-        
+
         <img src="./Imagenes/Logo2.png" style="width:120px;height:120px" />
         <div style="padding-top:10px;color:#668ba7">
             Torneos internos
@@ -55,17 +56,19 @@
             Jugadores
         </div>
 
+        <div id="divTabEquipos" class="Tab" onclick="SeleccionarTab(divTabEquipos,divEquipos)">
+            Equipos
+        </div>
+
     </div>
 
     <div id="divTorneos" class="ContenidoTab">
 
-        <table>
-            <tr>
-                <td id="tdListaTorneos" style="padding:20px;padding-bottom:100px;border-right-style:solid;border-right-width:thin;border-right-color:#a4a4a4">
-
+        <table style="width:100%">
+            <tr style="width:100%">
+                <td id="tdListaTorneos" valign="top" style="width:170px;padding:20px;padding-bottom:100px;border-right-style:solid;border-right-width:thin;border-right-color:#a4a4a4">
                 </td>
-                <td id="tdTorneoSeleccionado">
-
+                <td id="tdTorneoSeleccionado" valign="top" style="padding-left:10px">
                 </td>
             </tr>
         </table>
@@ -74,7 +77,55 @@
 
     <div id="divJugadores" style="display:none" class="ContenidoTab">
 
-        
+        <table id="tableJugadores" class="TablaJugadores" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="ColumnaTablaJugadores" style="border-top-left-radius: 15px;">
+                    Jugador
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Partidos jugados
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Games ganados
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Sets ganados
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Partidos ganados
+                </td>
+                <td class="ColumnaTablaJugadores" style="border-top-right-radius: 15px;">
+                    Torneos ganados
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="divEquipos" style="display:none" class="ContenidoTab">
+
+        <table id="tableEquipos" class="TablaJugadores" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="ColumnaTablaJugadores" style="border-top-left-radius: 15px;">
+                    Equipo
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Partidos jugados
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Games ganados
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Sets ganados
+                </td>
+                <td class="ColumnaTablaJugadores">
+                    Partidos ganados
+                </td>
+                <td class="ColumnaTablaJugadores" style="border-top-right-radius: 15px;">
+                    Torneos ganados
+                </td>
+            </tr>
+        </table>
 
     </div>
 
@@ -82,26 +133,13 @@
 
 
 
-<div id="divPlantillaJugador" style="display:none">
 
-    <table style="width:100%;" cellpadding="0" cellspacing="0">
-        <tr style="width:100%">
-            <td style="border-bottom-style: solid; width: 30px; padding: 10px; border-bottom-width: thin; border-bottom-color: #a4a4a4">
-                <i class="fa-solid fa-circle-user" style="font-size:30px;color:#668ba7"></i>
-            </td>
-            <td style="padding-left:10px;border-bottom-style:solid;padding:10px;border-bottom-width:thin;border-bottom-color:#a4a4a4">
-                @@Nombre@@
-            </td>
-        </tr>
-    </table>
-
-</div>
 
 <div id="divPlantillaTorneo" style="display:none">
 
     <table style="width:100%;" cellpadding="0" cellspacing="0" class="Torneo">
         <tr style="width:100%">
-            <td style="border-bottom-style: solid; width: 30px; padding: 10px; border-bottom-width: thin; border-bottom-color: #a4a4a4">                
+            <td style="border-bottom-style: solid; width: 30px; padding: 10px; border-bottom-width: thin; border-bottom-color: #a4a4a4">
                 <i class="fa-solid fa-trophy" style="font-size:30px;color:#c3ad2f"></i>
             </td>
             <td style="padding-left:10px;border-bottom-style:solid;padding:10px;border-bottom-width:thin;border-bottom-color:#a4a4a4">
@@ -116,9 +154,58 @@
 <div id="divPlantillaPartido" style="display:none">
 
 
-    <div>
+    <div class="Partido">
 
+        <div style="text-align:center;color:#668ba7;font-size:18px;">
+            @@Fase@@
+        </div>
 
+        <div class="FechaPartido">
+            @@Fecha@@
+        </div>
+
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="border-bottom-style: solid; border-bottom-width: thin; border-bottom-color: #d7d7d7;padding-right:15px;padding-bottom:5px;padding-top:5px">
+                    <div class="NombreJugador">
+                        @@Equipo1Jugador1@@
+                    </div>
+                    <div class="NombreJugador">
+                        @@Equipo1Jugador2@@
+                    </div>
+
+                </td>
+                <td class="PuntoSetEquipo1">
+                    @@Set1PuntosEquipo1@@
+                </td>
+                <td class="PuntoSetEquipo1">
+                    @@Set2PuntosEquipo1@@
+                </td>
+                <td class="PuntoSetEquipo1">
+                    @@Set3PuntosEquipo1@@
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="NombreJugador">
+                        @@Equipo2Jugador1@@
+                    </div>
+                    <div class="NombreJugador">
+                        @@Equipo2Jugador2@@
+                    </div>
+
+                </td>
+                <td class="PuntoSetEquipo2">
+                    @@Set1PuntosEquipo2@@
+                </td>
+                <td class="PuntoSetEquipo2">
+                    @@Set2PuntosEquipo2@@
+                </td>
+                <td class="PuntoSetEquipo2">
+                    @@Set3PuntosEquipo2@@
+                </td>
+            </tr>
+        </table>
 
     </div>
 

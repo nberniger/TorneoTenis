@@ -1,0 +1,48 @@
+
+
+.Partido {
+    width: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    border-style:solid;
+    border-width:thin;
+    border-color:#d7d7d7;
+}
+
+.FechaPartido {
+    border-bottom-style: solid;
+    border-bottom-color: #d7d7d7;
+    border-bottom-width: thin;
+    border-top-style: solid;
+    border-top-color: #d7d7d7;
+    border-top-width: thin;
+    padding: 10px;
+    text-align: center;
+    margin-top:7px;
+    margin-bottom:7px;
+    color:#63768e;
+}
+
+.PuntoSetEquipo1 {
+    border-style: solid;
+    border-color: #d7d7d7;
+    border-width: thin;
+    padding:10px
+}
+
+.PuntoSetEquipo2 {
+    border-left-style: solid;
+    border-left-color: #d7d7d7;
+    border-left-width: thin;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #d7d7d7;
+    border-right-color: #d7d7d7;
+    border-right-style: solid;
+    border-right-width: thin;
+    padding: 10px
+}
+
+.NombreJugador {
+    color: #555555;
+}

@@ -4,3 +4,26 @@
     padding:10px;
 
 }
+
+.TablaJugadores{
+    /*width:100%;*/
+    margin:8px;
+}
+
+.ColumnaTablaJugadores {
+    padding: 7px;
+    /*background-color: #546a80;*/
+    background-color: #eeeeee;
+        
+    color: #546a80;
+    text-align: center;
+}
+
+.CeldaTablaJugadores {
+    padding: 7px;
+    text-align: center;
+    color: #6c6c6c;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: #d7d7d7;
+}
