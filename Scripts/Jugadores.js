@@ -10,7 +10,7 @@ function InicializarJugadores() {
 
     var Jugador2 = {};
     Jugador2.ID = 2;
-    Jugador2.Nombre = 'Alberto Baldoménico';
+    Jugador2.Nombre = 'Alberto Baldomenico';
     Jugador2.NombreImagen = null;
     Jugadores.push(Jugador2);
 
