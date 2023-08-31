@@ -21,7 +21,7 @@ function InicializarTorneo1() {
     
     var Partido1 = {};    
     Partido1.Fase = 'Fase de grupos';
-    Partido1.Fecha = '--/--/-- --:--';
+    Partido1.Fecha = 'Martes 05/09/2023 19:00 - Cancha 4';
     Partido1.Equipo1Jugador1 = 1;
     Partido1.Equipo1Jugador2 = 5;
     Partido1.Equipo2Jugador1 = 6;

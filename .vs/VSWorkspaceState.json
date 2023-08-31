@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Scripts",
+    "\\Styles"
   ],
-  "SelectedNode": "\\C:\\Proyectos\\Otros\\Torneo Tenis",
+  "SelectedNode": "\\Scripts\\Torneos_Datos.js",
   "PreviewInSolutionExplorer": false
 }
