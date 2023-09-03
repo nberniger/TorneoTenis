@@ -36,11 +36,11 @@ function InicializarTorneo1() {
 
     var Partido2 = {};
     Partido2.Fase = 'Fase de grupos';
-    Partido2.Fecha = '--/--/-- --:--'
+    Partido2.Fecha = 'Martes 05/09/2023 19:00 - Cancha 6'
     Partido2.Equipo1Jugador1 = 7;
     Partido2.Equipo1Jugador2 = 3;
     Partido2.Equipo2Jugador1 = 8;
-    Partido2.Equipo2Jugador2 = 2;
+    Partido2.Equipo2Jugador2 = 9;
     Partido2.Set1_Puntos_Equipo1 = 0;
     Partido2.Set1_Puntos_Equipo2 = 0;
     Partido2.Set2_Puntos_Equipo1 = 0;
