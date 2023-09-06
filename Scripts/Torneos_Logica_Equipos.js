@@ -61,12 +61,11 @@ function ObtenerCantidadPartidosGanadosTorneoEquipo(TorneoID, Equipo) {
         if (Torneos[i].ID == TorneoID) {
             for (var j = 0; j < Torneos[i].Partidos.length; j++) {
                 if (EquipoJugoPartido(Torneos[i].Partidos[j], Equipo.Jugador1, Equipo.Jugador2)) {
-                    for (var h = 0; h < Torneos[i].Partidos.length; h++) {
-                        if (EquipoGanoPartido(Torneos[i].Partidos[h], Equipo.Jugador1, Equipo.Jugador2)) {
-                            Cantidad++;
-                        }
+                    
+                    if (EquipoGanoPartido(Torneos[i].Partidos[j], Equipo.Jugador1, Equipo.Jugador2)) {
+                        Cantidad++;
                     }
-
+                    
                 }
             }
         }
