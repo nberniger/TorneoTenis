@@ -51,7 +51,7 @@ function InicializarTorneo1() {
 
     var Partido3 = {};
     Partido3.Fase = 'Final';
-    Partido3.Fecha = 'Sabado 09/09/2023 11:00 - Cancha 1'
+    Partido3.Fecha = 'Sabado 09/09/2023 10:00 - Cancha 4'
     Partido3.Equipo1Jugador1 = 7;
     Partido3.Equipo1Jugador2 = 3;
     Partido3.Equipo2Jugador1 = 1;
