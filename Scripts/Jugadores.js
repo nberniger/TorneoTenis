@@ -87,11 +87,11 @@ function MostrarJugadores() {
         CeldaPartidosGanados.className = 'CeldaTablaJugadores';
         CeldaTorneosGanados.className = 'CeldaTablaJugadores';
 
-        CeldaPartidosJugados.innerHTML = 0;
-        CeldaGamesGanados.innerHTML = 0;
-        CeldaSetsGanados.innerHTML = 0;
-        CeldaPartidosGanados.innerHTML = 0;
-        CeldaTorneosGanados.innerHTML = 0;
+        CeldaPartidosJugados.innerHTML = ObtenerCantidadPartidosJugadosJugador(Jugadores[i].ID);
+        CeldaGamesGanados.innerHTML = ObtenerCantidadGamesGanadosJugador(Jugadores[i].ID);
+        CeldaSetsGanados.innerHTML = ObtenerCantidadSetsGanadosJugador(Jugadores[i].ID);
+        CeldaPartidosGanados.innerHTML = ObtenerCantidadPartidosGanadosJugador(Jugadores[i].ID);
+        CeldaTorneosGanados.innerHTML = ObtenerCantidadTorneosGanadosJugador(Jugadores[i].ID);
 
         //var divJugador = document.createElement('div');
 
@@ -105,71 +105,7 @@ function MostrarJugadores() {
 
 }
 
-function MostrarEquipos() {
 
-    var Equipos = ObtenerEquipos();
-
-    for (var i = 0; i < Equipos.length; i++) {
-
-        var FilaEquipo = tableEquipos.insertRow(tableEquipos.length);
-
-        var CeldaEquipo = FilaEquipo.insertCell(0);
-        var CeldaPartidosJugados = FilaEquipo.insertCell(1);
-        var CeldaGamesGanados = FilaEquipo.insertCell(2);
-        var CeldaSetsGanados = FilaEquipo.insertCell(3);
-        var CeldaPartidosGanados = FilaEquipo.insertCell(4);
-        var CeldaTorneosGanados = FilaEquipo.insertCell(5);
-        
-        CeldaEquipo.innerHTML = '<table><tr><td><i class="fa-solid fa-handshake" style="font-size:30px;color:#5c97ab"></i></td><td style="padding-left:6px">' + ObtenerNombreJugador(Equipos[i].Jugador1) + '<br/>' + ObtenerNombreJugador(Equipos[i].Jugador2) + '</td></tr></table>';
-        CeldaEquipo.style.textAlign = 'left';
-
-        CeldaEquipo.className = 'CeldaTablaJugadores';
-        CeldaPartidosJugados.className = 'CeldaTablaJugadores';
-        CeldaGamesGanados.className = 'CeldaTablaJugadores';
-        CeldaSetsGanados.className = 'CeldaTablaJugadores';
-        CeldaPartidosGanados.className = 'CeldaTablaJugadores';
-        CeldaTorneosGanados.className = 'CeldaTablaJugadores';
-
-        CeldaPartidosJugados.innerHTML = 0;
-        CeldaGamesGanados.innerHTML = 0;
-        CeldaSetsGanados.innerHTML = 0;
-        CeldaPartidosGanados.innerHTML = 0;
-        CeldaTorneosGanados.innerHTML = 0;
-    }
-
-}
-
-
-function ObtenerEquipos() {
-
-    var Equipos = [];
-
-    for (var i = 0; i < Torneos.length; i++) {
-
-        var EquiposTorneo = ObtenerEquiposTorneo(Torneos[i].ID);
-
-        for (var j = 0; j < EquiposTorneo.length; j++) {
-
-            var ExisteEquipo = false;
-
-            
-            for (var h = 0; h < Equipos.length; h++) {
-                if ((Equipos[h].Jugador1 == EquiposTorneo[j].Jugador1 && Equipos[h].Jugador2 == EquiposTorneo[j].Jugador2) || (Equipos[h].Jugador1 == EquiposTorneo[j].Jugador2 || Equipos[h].Jugador2 == EquiposTorneo[j].Jugador1)) {
-                    ExisteEquipo = true;
-                }
-            }
-            
-            
-
-            if (!ExisteEquipo) {
-                Equipos.push(EquiposTorneo[h]);
-            }
-
-        }
-    }
-
-    return Equipos;
-}
 
 function ObtenerJugador(ID) {
 
@@ -190,4 +126,67 @@ function ObtenerNombreJugador(ID) {
     } else {
         return '';
     }
+}
+
+
+function ObtenerCantidadPartidosJugadosJugador(JugadorID) {
+
+    var Cantidad = 0;
+
+    for (var i = 0; i < Torneos.length; i++) {
+
+        Cantidad += ObtenerCantidadPartidosJugadosTorneoJugador(Torneos[i].ID,JugadorID);
+
+    }
+
+    return Cantidad;
+
+}            
+
+function ObtenerCantidadGamesGanadosJugador(JugadorID) {
+
+    var Cantidad = 0;
+
+    for (var i = 0; i < Torneos.length; i++) {
+
+        Cantidad += ObtenerCantidadGamesGanadosTorneoJugador(Torneos[i].ID, JugadorID);
+
+    }
+
+    return Cantidad;
+
+}
+
+function ObtenerCantidadSetsGanadosJugador(JugadorID) {
+
+    var Cantidad = 0;
+
+    for (var i = 0; i < Torneos.length; i++) {
+
+        Cantidad += ObtenerCantidadSetsGanadosTorneoJugador(Torneos[i].ID, JugadorID);
+
+    }
+
+    return Cantidad;
+
+}
+
+function ObtenerCantidadPartidosGanadosJugador(JugadorID) {
+
+    var Cantidad = 0;
+
+    for (var i = 0; i < Torneos.length; i++) {
+
+        Cantidad += ObtenerCantidadPartidosGanadosTorneoJugador(Torneos[i].ID, JugadorID);
+
+    }
+
+    return Cantidad;
+
+}
+
+function ObtenerCantidadTorneosGanadosJugador(JugadorID) {
+
+    return ObtenerCantidadTorneosGanadosJugador(Torneos[i].ID, JugadorID);        
+
 }

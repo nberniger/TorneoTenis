@@ -119,10 +119,10 @@ function MostrarTorneos() {
             CeldaPartidosGanados.className = 'CeldaCuadroZona';
 
             CeldaEquipo.innerHTML = '<div>' + ObtenerNombreJugador(Equipos[e].Jugador1) + '</div>' + '<div>' + ObtenerNombreJugador(Equipos[e].Jugador2) + '</div>'
-            CeldaPartidosJugados.innerHTML = 0;
-            CeldaGamesGanados.innerHTML = 0;
-            CeldaSetsGanados.innerHTML = 0;
-            CeldaPartidosGanados.innerHTML = 0;
+            CeldaPartidosJugados.innerHTML = ObtenerCantidadPartidosJugadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
+            CeldaGamesGanados.innerHTML = ObtenerCantidadGamesGanadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
+            CeldaSetsGanados.innerHTML = ObtenerCantidadSetsGanadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
+            CeldaPartidosGanados.innerHTML = ObtenerCantidadPartidosGanadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
         }
 
         divCuadroTorneo.appendChild(TablaCuadro);
