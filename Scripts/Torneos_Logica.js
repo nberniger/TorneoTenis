@@ -74,6 +74,26 @@ function ObtenerEquiposTorneo(TorneoID) {
 
                 }
 
+                if (Torneos[i].JugadoresZona1 != null) {
+                    for (var z = 0; z < Torneos[i].JugadoresZona1.length; z++) {
+                        if (Torneos[i].JugadoresZona1[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
+                            Equipo1.Zona = 1;
+                        }
+                        if (Torneos[i].JugadoresZona1[z] == Equipo2.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo2.Jugador2) {
+                            Equipo2.Zona = 1;
+                        }
+                    }
+
+                    for (var z = 0; z < Torneos[i].JugadoresZona2.length; z++) {
+                        if (Torneos[i].JugadoresZona2[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
+                            Equipo1.Zona = 2;
+                        }
+                        if (Torneos[i].JugadoresZona2[z] == Equipo2.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo2.Jugador2) {
+                            Equipo1.Zona = 2;
+                        }
+                    }
+                }
+
                 if (!ExisteEquipo1) {
                     if (Equipo1.Jugador1 != 0 && Equipo1.jugador2 != 0) {
                         Equipos.push(Equipo1);
@@ -86,7 +106,15 @@ function ObtenerEquiposTorneo(TorneoID) {
                         Equipos.push(Equipo2);
                     }
                 }
+
+                
+
             }
+
+            for (var y = 0; y < Torneos[i].Equipos; y++) {
+                
+            }
+
         }
 
     }

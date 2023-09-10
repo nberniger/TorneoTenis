@@ -72,66 +72,38 @@ function MostrarTorneos() {
 
         var Equipos = ObtenerEquiposTorneo(Torneos[i].ID);
 
-        var TablaCuadro = document.createElement('table');
-        TablaCuadro.style.margin = '8px';
-        TablaCuadro.cellPadding = 0;
-        TablaCuadro.cellSpacing = 0;
-
-
-        var ColumnasCuadro = TablaCuadro.insertRow(0);
-        var ColumnaEquipo = ColumnasCuadro.insertCell(0);
-        var ColumnaPartidosJugados = ColumnasCuadro.insertCell(1);
-        var ColumnaGamesGanados = ColumnasCuadro.insertCell(2);
-        var ColumnaSetsGanados = ColumnasCuadro.insertCell(3);
-        var ColumnaPartidosGanados = ColumnasCuadro.insertCell(4);
-
-        
-        ColumnaEquipo.innerHTML = 'Equipo';
-        ColumnaPartidosJugados.innerHTML = 'Partidos jugados';
-        ColumnaGamesGanados.innerHTML = 'Games ganados';
-        ColumnaSetsGanados.innerHTML = 'Sets ganados';
-        ColumnaPartidosGanados.innerHTML = 'Partidos ganados';
-
-        ColumnaEquipo.style.borderTopLeftRadius = '15px';
-        ColumnaPartidosGanados.style.borderTopRightRadius = '15px';
-
-        ColumnaEquipo.className = 'ColumnaCuadroZona';
-        ColumnaPartidosJugados.className = 'ColumnaCuadroZona';
-        ColumnaGamesGanados.className = 'ColumnaCuadroZona';
-        ColumnaSetsGanados.className = 'ColumnaCuadroZona';
-        ColumnaPartidosGanados.className = 'ColumnaCuadroZona';
-
+        var EquiposZona1 = [];
+        var EquiposZona2 = [];
 
         for (var e = 0; e < Equipos.length; e++) {
-                
-            var FilaEquipo = TablaCuadro.insertRow((e+1));
-
-            var CeldaEquipo = FilaEquipo.insertCell(0);
-            var CeldaPartidosJugados = FilaEquipo.insertCell(1);
-            var CeldaGamesGanados = FilaEquipo.insertCell(2);
-            var CeldaSetsGanados = FilaEquipo.insertCell(3);
-            var CeldaPartidosGanados = FilaEquipo.insertCell(4);
-
-            CeldaEquipo.className = 'CeldaCuadroZona';
-            CeldaPartidosJugados.className = 'CeldaCuadroZona';
-            CeldaGamesGanados.className = 'CeldaCuadroZona';
-            CeldaSetsGanados.className = 'CeldaCuadroZona';
-            CeldaPartidosGanados.className = 'CeldaCuadroZona';
-
-            CeldaEquipo.innerHTML = '<div>' + ObtenerNombreJugador(Equipos[e].Jugador1) + '</div>' + '<div>' + ObtenerNombreJugador(Equipos[e].Jugador2) + '</div>'
-            CeldaPartidosJugados.innerHTML = ObtenerCantidadPartidosJugadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
-            CeldaGamesGanados.innerHTML = ObtenerCantidadGamesGanadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
-            CeldaSetsGanados.innerHTML = ObtenerCantidadSetsGanadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
-            CeldaPartidosGanados.innerHTML = ObtenerCantidadPartidosGanadosTorneoEquipo(Torneos[i].ID, Equipos[e]);
+            if (Equipos[e].Zona == 1) {
+                EquiposZona1.push(Equipos[e]);
+            } else if (Equipos[e].Zona == 2) {
+                EquiposZona2.push(Equipos[e]);
+            }
         }
 
-        divCuadroTorneo.appendChild(TablaCuadro);
+        if (EquiposZona1.length == 0 && EquiposZona2.length == 0) {
+            MostrarCuadro(divCuadroTorneo, Equipos,Torneos[i]);
+        } else {
+            if (EquiposZona1.length > 0) {
+                MostrarCuadro(divCuadroTorneo, EquiposZona1, Torneos[i]);
+            }
+
+            if (EquiposZona2.length > 0) {
+                MostrarCuadro(divCuadroTorneo, EquiposZona2, Torneos[i]);
+            }
+        }
+        
+
+        
 
         divDetalleTorneo.appendChild(divPartidosTorneo);
         divDetalleTorneo.appendChild(divCuadroTorneo);
     }
 
-    document.getElementById('divTorneo' + (Torneos[Torneos.length - 1].ID)).click();
+    /*document.getElementById('divTorneo' + (Torneos[Torneos.length - 1].ID)).click();*/
+    document.getElementById('divTorneo' + (Torneos[0].ID)).click();
 
 }    
 
@@ -163,6 +135,65 @@ function SeleccionarTabCuadroTorneo(TorneoID) {
 
     document.getElementById('TabPartidosTorneo' + TorneoID).className = 'Tab';
     document.getElementById('TabCuadroTorneo' + TorneoID).className = 'TabSeleccionado';
+
+}
+
+function MostrarCuadro(divCuadroTorneo,Equipos,Torneo) {
+
+    var TablaCuadro = document.createElement('table');
+    TablaCuadro.style.margin = '8px';
+    TablaCuadro.cellPadding = 0;
+    TablaCuadro.cellSpacing = 0;
+
+
+    var ColumnasCuadro = TablaCuadro.insertRow(0);
+    var ColumnaEquipo = ColumnasCuadro.insertCell(0);
+    var ColumnaPartidosJugados = ColumnasCuadro.insertCell(1);
+    var ColumnaGamesGanados = ColumnasCuadro.insertCell(2);
+    var ColumnaSetsGanados = ColumnasCuadro.insertCell(3);
+    var ColumnaPartidosGanados = ColumnasCuadro.insertCell(4);
+
+
+    ColumnaEquipo.innerHTML = 'Equipo';
+    ColumnaPartidosJugados.innerHTML = 'Partidos jugados';
+    ColumnaGamesGanados.innerHTML = 'Games ganados';
+    ColumnaSetsGanados.innerHTML = 'Sets ganados';
+    ColumnaPartidosGanados.innerHTML = 'Partidos ganados';
+
+    ColumnaEquipo.style.borderTopLeftRadius = '15px';
+    ColumnaPartidosGanados.style.borderTopRightRadius = '15px';
+
+    ColumnaEquipo.className = 'ColumnaCuadroZona';
+    ColumnaPartidosJugados.className = 'ColumnaCuadroZona';
+    ColumnaGamesGanados.className = 'ColumnaCuadroZona';
+    ColumnaSetsGanados.className = 'ColumnaCuadroZona';
+    ColumnaPartidosGanados.className = 'ColumnaCuadroZona';
+
+
+    for (var e = 0; e < Equipos.length; e++) {
+
+        var FilaEquipo = TablaCuadro.insertRow((e + 1));
+
+        var CeldaEquipo = FilaEquipo.insertCell(0);
+        var CeldaPartidosJugados = FilaEquipo.insertCell(1);
+        var CeldaGamesGanados = FilaEquipo.insertCell(2);
+        var CeldaSetsGanados = FilaEquipo.insertCell(3);
+        var CeldaPartidosGanados = FilaEquipo.insertCell(4);
+
+        CeldaEquipo.className = 'CeldaCuadroZona';
+        CeldaPartidosJugados.className = 'CeldaCuadroZona';
+        CeldaGamesGanados.className = 'CeldaCuadroZona';
+        CeldaSetsGanados.className = 'CeldaCuadroZona';
+        CeldaPartidosGanados.className = 'CeldaCuadroZona';
+
+        CeldaEquipo.innerHTML = '<div>' + ObtenerNombreJugador(Equipos[e].Jugador1) + '</div>' + '<div>' + ObtenerNombreJugador(Equipos[e].Jugador2) + '</div>'
+        CeldaPartidosJugados.innerHTML = ObtenerCantidadPartidosJugadosTorneoEquipo(Torneo.ID, Equipos[e]);
+        CeldaGamesGanados.innerHTML = ObtenerCantidadGamesGanadosTorneoEquipo(Torneo.ID, Equipos[e]);
+        CeldaSetsGanados.innerHTML = ObtenerCantidadSetsGanadosTorneoEquipo(Torneo.ID, Equipos[e]);
+        CeldaPartidosGanados.innerHTML = ObtenerCantidadPartidosGanadosTorneoEquipo(Torneo.ID, Equipos[e]);
+    }
+
+    divCuadroTorneo.appendChild(TablaCuadro);
 
 }
 

@@ -114,7 +114,13 @@ function EquipoGanoTorneo(TorneoID, Equipo) {
 
     }
 
-    return EquiposIguales(Equipo, EquipoMasGano);
+    if (EquipoMasGano != null) {
+        return EquiposIguales(Equipo, EquipoMasGano);
+    } else {
+        return false;
+    }
+
+    
 
 }
 

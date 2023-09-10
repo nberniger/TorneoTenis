@@ -55,6 +55,30 @@ function InicializarJugadores() {
     Jugador9.Nombre = 'Flavio';
     Jugador9.NombreImagen = null;
     Jugadores.push(Jugador9);
+
+    var Jugador10 = {};
+    Jugador10.ID = 10;
+    Jugador10.Nombre = 'Javier';
+    Jugador10.NombreImagen = null;
+    Jugadores.push(Jugador10);
+
+    var Jugador11 = {};
+    Jugador11.ID = 11;
+    Jugador11.Nombre = 'Martin';
+    Jugador11.NombreImagen = null;
+    Jugadores.push(Jugador11);
+
+    var Jugador12 = {};
+    Jugador12.ID = 12;
+    Jugador12.Nombre = 'Guille';
+    Jugador12.NombreImagen = null;
+    Jugadores.push(Jugador12);
+
+    var Jugador13 = {};
+    Jugador13.ID = 13;
+    Jugador13.Nombre = 'Fernando';
+    Jugador13.NombreImagen = null;
+    Jugadores.push(Jugador13);
     
 }
 
