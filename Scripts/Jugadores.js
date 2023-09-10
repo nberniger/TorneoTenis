@@ -85,6 +85,21 @@ function InicializarJugadores() {
 
 function MostrarJugadores() {
 
+    for (var i = 0; i < Jugadores.length; i++) {
+
+        //Establecer cantidades aca para hacer el sort antes de renderizar la tabla
+
+        Jugadores[i].CantidadPartidosJugados = ObtenerCantidadPartidosJugadosJugador(Jugadores[i].ID);
+        Jugadores[i].CantidadGamesGanados = ObtenerCantidadGamesGanadosJugador(Jugadores[i].ID);
+        Jugadores[i].CantidadSetsGanados = ObtenerCantidadSetsGanadosJugador(Jugadores[i].ID);
+        Jugadores[i].CantidadPartidosGanados = ObtenerCantidadPartidosGanadosJugador(Jugadores[i].ID);
+        Jugadores[i].CantidadTorneosGanados = ObtenerCantidadTorneosGanadosJugador(Jugadores[i].ID);
+
+    }
+
+    Jugadores = Jugadores.sort(function (b, a) {
+        return a.CantidadTorneosGanados - b.CantidadTorneosGanados;
+    });
 
     for (var i = 0; i < Jugadores.length; i++) {
 
@@ -224,3 +239,4 @@ function ObtenerCantidadTorneosGanadosJugador(JugadorID) {
     
 
 }
+

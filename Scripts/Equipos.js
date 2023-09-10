@@ -6,6 +6,22 @@ function MostrarEquipos() {
 
     for (var i = 0; i < Equipos.length; i++) {
 
+        //Establecer cantidades aca para hacer el sort antes de renderizar la tabla
+
+        Equipos[i].CantidadPartidosJugados = ObtenerCantidadPartidosJugadosEquipo(Equipos[i]);
+        Equipos[i].CantidadGamesGanados = ObtenerCantidadGamesGanadosEquipo(Equipos[i]);
+        Equipos[i].CantidadSetsGanados = ObtenerCantidadSetsGanadosEquipo(Equipos[i]);
+        Equipos[i].CantidadPartidosGanados = ObtenerCantidadPartidosGanadosEquipo(Equipos[i]);
+        Equipos[i].CantidadTorneosGanados = ObtenerCantidadTorneosGanadosEquipo(Equipos[i]);
+
+    }
+
+    Equipos = Equipos.sort(function (b, a) {
+        return a.CantidadTorneosGanados - b.CantidadTorneosGanados;
+    });
+
+    for (var i = 0; i < Equipos.length; i++) {
+
         var FilaEquipo = tableEquipos.insertRow(tableEquipos.length);
 
         var CeldaEquipo = FilaEquipo.insertCell(0);
