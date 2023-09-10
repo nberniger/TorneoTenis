@@ -98,27 +98,32 @@ function EquipoGanoTorneo(TorneoID, Equipo) {
 
     var Torneo = ObtenerTorneo(TorneoID);
 
-    var Equipos = ObtenerEquiposTorneo(TorneoID);
+    if (Torneo.Finalizado) {
+        var Equipos = ObtenerEquiposTorneo(TorneoID);
 
-    var EquipoMasGano = null;
-    var MaximaCantidadPartidos = 0;
+        var EquipoMasGano = null;
+        var MaximaCantidadPartidos = 0;
 
-    for (var i = 0; i < Equipos.length; i++) {
+        for (var i = 0; i < Equipos.length; i++) {
 
-        var CantidadGanados = ObtenerCantidadPartidosGanadosTorneoEquipo(TorneoID, Equipos[i])
+            var CantidadGanados = ObtenerCantidadPartidosGanadosTorneoEquipo(TorneoID, Equipos[i])
 
-        if ((CantidadGanados > MaximaCantidadPartidos) || (CantidadGanados == MaximaCantidadPartidos && !EquiposIguales(Equipo,Equipos[i]))) {
-            EquipoMasGano = Equipos[i];
-            MaximaCantidadPartidos = CantidadGanados;
+            if ((CantidadGanados > MaximaCantidadPartidos) || (CantidadGanados == MaximaCantidadPartidos && !EquiposIguales(Equipo, Equipos[i]))) {
+                EquipoMasGano = Equipos[i];
+                MaximaCantidadPartidos = CantidadGanados;
+            }
+
         }
 
-    }
-
-    if (EquipoMasGano != null) {
-        return EquiposIguales(Equipo, EquipoMasGano);
+        if (EquipoMasGano != null) {
+            return EquiposIguales(Equipo, EquipoMasGano);
+        } else {
+            return false;
+        }
     } else {
         return false;
     }
+    
 
     
 

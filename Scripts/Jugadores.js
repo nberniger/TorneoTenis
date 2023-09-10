@@ -94,11 +94,11 @@ function MostrarJugadores() {
         Jugadores[i].CantidadSetsGanados = ObtenerCantidadSetsGanadosJugador(Jugadores[i].ID);
         Jugadores[i].CantidadPartidosGanados = ObtenerCantidadPartidosGanadosJugador(Jugadores[i].ID);
         Jugadores[i].CantidadTorneosGanados = ObtenerCantidadTorneosGanadosJugador(Jugadores[i].ID);
-
+        Jugadores[i].Puntos = ObtenerPuntosJugador(Jugadores[i]);
     }
 
     Jugadores = Jugadores.sort(function (b, a) {
-        return a.CantidadTorneosGanados - b.CantidadTorneosGanados;
+        return parseInt(a.Puntos) - parseInt(b.Puntos);
     });
 
     for (var i = 0; i < Jugadores.length; i++) {
@@ -111,6 +111,7 @@ function MostrarJugadores() {
         var CeldaSetsGanados = FilaJugador.insertCell(3);
         var CeldaPartidosGanados = FilaJugador.insertCell(4);
         var CeldaTorneosGanados = FilaJugador.insertCell(5);
+        var CeldaPuntos = FilaJugador.insertCell(6);
 
         if (Jugadores[i].NombreImagen != null) {
             CeldaJugador.innerHTML = '<table><tr><td><img src="./Imagenes/Jugadores/' + Jugadores[i].NombreImagen + '" style="width:40px;height:40px"/></td><td style="padding-left:6px">' + Jugadores[i].Nombre + '</td></tr></table>';
@@ -126,12 +127,15 @@ function MostrarJugadores() {
         CeldaSetsGanados.className = 'CeldaTablaJugadores';
         CeldaPartidosGanados.className = 'CeldaTablaJugadores';
         CeldaTorneosGanados.className = 'CeldaTablaJugadores';
+        CeldaPuntos.className = 'CeldaTablaJugadores';
+        CeldaPuntos.style.color = '#04b41a';
 
-        CeldaPartidosJugados.innerHTML = ObtenerCantidadPartidosJugadosJugador(Jugadores[i].ID);
-        CeldaGamesGanados.innerHTML = ObtenerCantidadGamesGanadosJugador(Jugadores[i].ID);
-        CeldaSetsGanados.innerHTML = ObtenerCantidadSetsGanadosJugador(Jugadores[i].ID);
-        CeldaPartidosGanados.innerHTML = ObtenerCantidadPartidosGanadosJugador(Jugadores[i].ID);
-        CeldaTorneosGanados.innerHTML = ObtenerCantidadTorneosGanadosJugador(Jugadores[i].ID);
+        CeldaPartidosJugados.innerHTML = Jugadores[i].CantidadPartidosJugados;
+        CeldaGamesGanados.innerHTML = Jugadores[i].CantidadGamesGanados;
+        CeldaSetsGanados.innerHTML = Jugadores[i].CantidadSetsGanados;
+        CeldaPartidosGanados.innerHTML = Jugadores[i].CantidadPartidosGanados;
+        CeldaTorneosGanados.innerHTML = Jugadores[i].CantidadTorneosGanados;
+        CeldaPuntos.innerHTML = Jugadores[i].Puntos;
 
         //var divJugador = document.createElement('div');
 
@@ -240,3 +244,15 @@ function ObtenerCantidadTorneosGanadosJugador(JugadorID) {
 
 }
 
+function ObtenerPuntosJugador(Jugador) {
+
+    var Puntos = 0;
+    
+    Puntos += 1 * Jugador.CantidadGamesGanados;
+    Puntos += 5 * Jugador.CantidadSetsGanados;
+    Puntos += 30 * Jugador.CantidadPartidosGanados;
+    Puntos += 1000 * Jugador.CantidadTorneosGanados;
+
+    return Puntos;
+
+}

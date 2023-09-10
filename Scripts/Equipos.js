@@ -13,11 +13,12 @@ function MostrarEquipos() {
         Equipos[i].CantidadSetsGanados = ObtenerCantidadSetsGanadosEquipo(Equipos[i]);
         Equipos[i].CantidadPartidosGanados = ObtenerCantidadPartidosGanadosEquipo(Equipos[i]);
         Equipos[i].CantidadTorneosGanados = ObtenerCantidadTorneosGanadosEquipo(Equipos[i]);
+        Equipos[i].Puntos = ObtenerPuntosEquipo(Equipos[i]);
 
     }
 
     Equipos = Equipos.sort(function (b, a) {
-        return a.CantidadTorneosGanados - b.CantidadTorneosGanados;
+        return a.Puntos - b.Puntos;
     });
 
     for (var i = 0; i < Equipos.length; i++) {
@@ -30,6 +31,7 @@ function MostrarEquipos() {
         var CeldaSetsGanados = FilaEquipo.insertCell(3);
         var CeldaPartidosGanados = FilaEquipo.insertCell(4);
         var CeldaTorneosGanados = FilaEquipo.insertCell(5);
+        var CeldaPuntos = FilaEquipo.insertCell(6);
         
         CeldaEquipo.innerHTML = '<table><tr><td><i class="fa-solid fa-handshake" style="font-size:30px;color:#5c97ab"></i></td><td style="padding-left:6px">' + ObtenerNombreJugador(Equipos[i].Jugador1) + '<br/>' + ObtenerNombreJugador(Equipos[i].Jugador2) + '</td></tr></table>';
         CeldaEquipo.style.textAlign = 'left';
@@ -40,12 +42,15 @@ function MostrarEquipos() {
         CeldaSetsGanados.className = 'CeldaTablaJugadores';
         CeldaPartidosGanados.className = 'CeldaTablaJugadores';
         CeldaTorneosGanados.className = 'CeldaTablaJugadores';
+        CeldaPuntos.className = 'CeldaTablaJugadores';
+        CeldaPuntos.style.color = '#04b41a';
 
-        CeldaPartidosJugados.innerHTML = ObtenerCantidadPartidosJugadosEquipo(Equipos[i]);
-        CeldaGamesGanados.innerHTML = ObtenerCantidadGamesGanadosEquipo(Equipos[i]);
-        CeldaSetsGanados.innerHTML = ObtenerCantidadSetsGanadosEquipo(Equipos[i]);
-        CeldaPartidosGanados.innerHTML = ObtenerCantidadPartidosGanadosEquipo(Equipos[i]);
-        CeldaTorneosGanados.innerHTML = ObtenerCantidadTorneosGanadosEquipo(Equipos[i]);
+        CeldaPartidosJugados.innerHTML = Equipos[i].CantidadPartidosJugados;
+        CeldaGamesGanados.innerHTML = Equipos[i].CantidadGamesGanados;
+        CeldaSetsGanados.innerHTML = Equipos[i].CantidadSetsGanados;
+        CeldaPartidosGanados.innerHTML = Equipos[i].CantidadPartidosGanados;
+        CeldaTorneosGanados.innerHTML = Equipos[i].CantidadTorneosGanados;
+        CeldaPuntos.innerHTML = Equipos[i].Puntos;
     }
 
 }
@@ -154,4 +159,18 @@ function EquiposIguales(Equipo1, Equipo2) {
 
     return ((Equipo1.Jugador1 == Equipo2.Jugador1 && Equipo1.Jugador2 == Equipo2.Jugador2) || (Equipo1.Jugador1 == Equipo2.Jugador2 && Equipo1.Jugador2 == Equipo2.Jugador1))
     
+}
+
+
+function ObtenerPuntosEquipo(Equipo) {
+
+    var Puntos = 0;
+
+    Puntos += 1 * Equipo.CantidadGamesGanados;
+    Puntos += 5 * Equipo.CantidadSetsGanados;
+    Puntos += 30 * Equipo.CantidadPartidosGanados;
+    Puntos += 1000 * Equipo.CantidadTorneosGanados;
+
+    return Puntos;
+
 }
