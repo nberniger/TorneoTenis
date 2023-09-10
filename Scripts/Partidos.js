@@ -192,7 +192,21 @@ function JugadorJugoPartido(Partido, JugadorID) {
 
 function EquipoJugoPartido(Partido, Jugador1ID, Jugador2ID) {
 
-    return (JugadorJugoPartido(Partido, Jugador1ID) && JugadorJugoPartido(Partido, Jugador2ID));
+    if (
+        (Partido.Equipo1Jugador1 == Jugador1ID && Partido.Equipo1Jugador2 == Jugador2ID)
+        ||
+        (Partido.Equipo1Jugador1 == Jugador2ID && Partido.Equipo1Jugador2 == Jugador1ID)
+        ||
+        (Partido.Equipo2Jugador1 == Jugador1ID && Partido.Equipo2Jugador2 == Jugador2ID)
+        ||
+        (Partido.Equipo2Jugador1 == Jugador2ID && Partido.Equipo2Jugador2 == Jugador1ID)
+    ) {
+        return true;
+    } else {
+        return false;
+    }
+
+    /*return (JugadorJugoPartido(Partido, Jugador1ID) && JugadorJugoPartido(Partido, Jugador2ID));*/
 
 }
 

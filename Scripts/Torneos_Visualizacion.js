@@ -141,7 +141,7 @@ function SeleccionarTabCuadroTorneo(TorneoID) {
 function MostrarCuadro(divCuadroTorneo,Equipos,Torneo) {
 
     var TablaCuadro = document.createElement('table');
-    TablaCuadro.style.margin = '8px';
+    TablaCuadro.style.margin = '38px';
     TablaCuadro.cellPadding = 0;
     TablaCuadro.cellSpacing = 0;
 

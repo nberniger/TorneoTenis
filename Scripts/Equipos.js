@@ -49,7 +49,8 @@ function ObtenerEquipos() {
 
             
             for (var h = 0; h < Equipos.length; h++) {
-                if ((Equipos[h].Jugador1 == EquiposTorneo[j].Jugador1 && Equipos[h].Jugador2 == EquiposTorneo[j].Jugador2) || (Equipos[h].Jugador1 == EquiposTorneo[j].Jugador2 || Equipos[h].Jugador2 == EquiposTorneo[j].Jugador1)) {
+                /*if ((Equipos[h].Jugador1 == EquiposTorneo[j].Jugador1 && Equipos[h].Jugador2 == EquiposTorneo[j].Jugador2) || (Equipos[h].Jugador1 == EquiposTorneo[j].Jugador2 || Equipos[h].Jugador2 == EquiposTorneo[j].Jugador1)) {*/
+                if (EquiposIguales(Equipos[h], EquiposTorneo[j])) {
                     ExisteEquipo = true;
                 }
             }
@@ -57,7 +58,10 @@ function ObtenerEquipos() {
             
 
             if (!ExisteEquipo) {
-                Equipos.push(EquiposTorneo[h]);
+                if (EquiposTorneo[j] != null) {
+                    Equipos.push(EquiposTorneo[j]);
+                }
+                
             }
 
         }

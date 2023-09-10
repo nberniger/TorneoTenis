@@ -18,9 +18,10 @@ function InicializarTorneo2() {
     var Torneo2 = {};
     Torneo2.ID = 2;
     Torneo2.Nombre = 'Torneo 2';
-    Torneo2.JugadoresZona1 = [7, 10, 1, 8, 4, 5];
-    Torneo2.JugadoresZona2 = [11, 12, 3, 2, 13, 6];
-    Torneo2.Equipos = [{Jugador1=7,Jugador2=10}]
+    //Torneo2.JugadoresZona1 = [7, 10, 1, 8, 4, 5];
+    //Torneo2.JugadoresZona2 = [11, 12, 3, 2, 13, 6];
+    Torneo2.EquiposZona1 = [{ Jugador1: 7, Jugador2: 10, Zona: 1 }, { Jugador1: 1, Jugador2: 8, Zona: 1 }, { Jugador1: 4, Jugador2: 5, Zona: 1 }];
+    Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 12, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona : 2 }];
     Torneos.push(Torneo2);
 
     Torneo2.Partidos = [];

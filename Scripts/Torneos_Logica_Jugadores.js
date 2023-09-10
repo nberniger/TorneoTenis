@@ -124,7 +124,7 @@ function JugadorGanoTorneo(TorneoID, JugadorID) {
         var CantidadGanados = ObtenerCantidadPartidosGanadosTorneoJugador(TorneoID, Jugadores[i])
 
         if ((CantidadGanados > MaximaCantidadPartidos) || (CantidadGanados == MaximaCantidadPartidos && JugadorMasGano != JugadorID)) {
-            JugadorMasGano = Jugadores[i].ID;
+            JugadorMasGano = Jugadores[i];
             MaximaCantidadPartidos = CantidadGanados;
         }
 

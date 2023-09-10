@@ -79,6 +79,7 @@ function InicializarJugadores() {
     Jugador13.Nombre = 'Fernando';
     Jugador13.NombreImagen = null;
     Jugadores.push(Jugador13);
+
     
 }
 
@@ -211,6 +212,15 @@ function ObtenerCantidadPartidosGanadosJugador(JugadorID) {
 
 function ObtenerCantidadTorneosGanadosJugador(JugadorID) {
 
-    return ObtenerCantidadTorneosGanadosJugador(Torneos[i].ID, JugadorID);        
+    var Cantidad = 0;
+
+    for (var i = 0; i < Torneos.length[i]; i++) {
+        if (JugadorGanoTorneo(Torneos[i].ID, JugadorID)) {
+            Cantidad++;
+        }
+    }
+
+    return Cantidad;
+    
 
 }

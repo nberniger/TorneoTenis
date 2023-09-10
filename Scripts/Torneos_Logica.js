@@ -59,23 +59,23 @@ function ObtenerEquiposTorneo(TorneoID) {
                 Equipo2.Jugador1 = Torneos[i].Partidos[j].Equipo2Jugador1;
                 Equipo2.Jugador2 = Torneos[i].Partidos[j].Equipo2Jugador2;
 
-                var ExisteEquipo1 = false;
-                var ExisteEquipo2 = false;
+                //var ExisteEquipo1 = false;
+                //var ExisteEquipo2 = false;
 
-                for (var h = 0; h < Equipos.length; h++) {
+                //for (var h = 0; h < Equipos.length; h++) {
 
-                    if ((Equipos[h].Jugador1 == Equipo1.Jugador1 && Equipos[h].Jugador2 == Equipo1.Jugador2) || (Equipos[h].Jugador1 == Equipo1.Jugador2 && Equipos[h].Jugador2 == Equipo1.Jugador1)) {
-                        ExisteEquipo1 = true;
-                    }
+                //    if ((Equipos[h].Jugador1 == Equipo1.Jugador1 && Equipos[h].Jugador2 == Equipo1.Jugador2) || (Equipos[h].Jugador1 == Equipo1.Jugador2 && Equipos[h].Jugador2 == Equipo1.Jugador1)) {
+                //        ExisteEquipo1 = true;
+                //    }
 
-                    if ((Equipos[h].Jugador1 == Equipo2.Jugador1 && Equipos[h].Jugador2 == Equipo2.Jugador2) || (Equipos[h].Jugador1 == Equipo2.Jugador2 && Equipos[h].Jugador2 == Equipo2.Jugador1)) {
-                        ExisteEquipo2 = true;
-                    }
+                //    if ((Equipos[h].Jugador1 == Equipo2.Jugador1 && Equipos[h].Jugador2 == Equipo2.Jugador2) || (Equipos[h].Jugador1 == Equipo2.Jugador2 && Equipos[h].Jugador2 == Equipo2.Jugador1)) {
+                //        ExisteEquipo2 = true;
+                //    }
 
-                }
+                //}
 
-                if (Torneos[i].JugadoresZona1 != null) {
-                    for (var z = 0; z < Torneos[i].JugadoresZona1.length; z++) {
+                if (Torneos[i].EquiposZona1 != null) {
+                    for (var z = 0; z < Torneos[i].EquiposZona1.length; z++) {
                         if (Torneos[i].JugadoresZona1[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
                             Equipo1.Zona = 1;
                         }
@@ -94,14 +94,15 @@ function ObtenerEquiposTorneo(TorneoID) {
                     }
                 }
 
-                if (!ExisteEquipo1) {
+                
+                if (!EquipoYaAgregado(Equipo1, Equipos)){
                     if (Equipo1.Jugador1 != 0 && Equipo1.jugador2 != 0) {
                         Equipos.push(Equipo1);
                     }
 
                 }
 
-                if (!ExisteEquipo2) {
+                if (!EquipoYaAgregado(Equipo2, Equipos)) {                
                     if (Equipo2.Jugador1 != 0 && Equipo2.jugador2 != 0) {
                         Equipos.push(Equipo2);
                     }
@@ -111,9 +112,22 @@ function ObtenerEquiposTorneo(TorneoID) {
 
             }
 
-            for (var y = 0; y < Torneos[i].Equipos; y++) {
-                
+            if (Torneos[i].EquiposZona1 != null) {
+                for (var y = 0; y < Torneos[i].EquiposZona1.length; y++) {
+                    if (!EquipoYaAgregado(Torneos[i].EquiposZona1[y], Equipos)) {
+                        Equipos.push(Torneos[i].EquiposZona1[y]);
+                    }
+                }
             }
+            
+            if (Torneos[i].EquiposZona2 != null) {
+                for (var y = 0; y < Torneos[i].EquiposZona2.length; y++) {
+                    if (!EquipoYaAgregado(Torneos[i].EquiposZona2[y], Equipos)) {
+                        Equipos.push(Torneos[i].EquiposZona2[y]);
+                    }
+                }
+            }
+            
 
         }
 
@@ -121,4 +135,15 @@ function ObtenerEquiposTorneo(TorneoID) {
 
     return Equipos;
 
+}
+function EquipoYaAgregado(Equipo, Equipos) {
+    
+
+    for (var i = 0; i < Equipos.length; i++) {
+        if (EquiposIguales(Equipo, Equipos[i])) {
+            return true;
+        }
+    }
+
+    return false;
 }
