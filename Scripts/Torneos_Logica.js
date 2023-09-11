@@ -76,21 +76,33 @@ function ObtenerEquiposTorneo(TorneoID) {
 
                 if (Torneos[i].EquiposZona1 != null) {
                     for (var z = 0; z < Torneos[i].EquiposZona1.length; z++) {
-                        if (Torneos[i].JugadoresZona1[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
+                        if (EquiposIguales(Torneos[i].EquiposZona1[z], Equipo1)) {
                             Equipo1.Zona = 1;
                         }
-                        if (Torneos[i].JugadoresZona1[z] == Equipo2.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo2.Jugador2) {
+                        if (EquiposIguales(Torneos[i].EquiposZona1[z], Equipo2)) {
                             Equipo2.Zona = 1;
                         }
+                        //if (Torneos[i].JugadoresZona1[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
+                        //    Equipo1.Zona = 1;
+                        //}
+                        //if (Torneos[i].JugadoresZona1[z] == Equipo2.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo2.Jugador2) {
+                        //    Equipo2.Zona = 1;
+                        //}
                     }
 
-                    for (var z = 0; z < Torneos[i].JugadoresZona2.length; z++) {
-                        if (Torneos[i].JugadoresZona2[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
+                    for (var z = 0; z < Torneos[i].EquiposZona1.length; z++) {
+                        if (EquiposIguales(Torneos[i].EquiposZona2[z], Equipo1)) {
                             Equipo1.Zona = 2;
                         }
-                        if (Torneos[i].JugadoresZona2[z] == Equipo2.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo2.Jugador2) {
-                            Equipo1.Zona = 2;
+                        if (EquiposIguales(Torneos[i].EquiposZona2[z], Equipo2)) {
+                            Equipo2.Zona = 2;
                         }
+                        //if (Torneos[i].JugadoresZona2[z] == Equipo1.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo1.Jugador2) {
+                        //    Equipo1.Zona = 2;
+                        //}
+                        //if (Torneos[i].JugadoresZona2[z] == Equipo2.Jugador1 || Torneos[i].JugadoresZona1[z] == Equipo2.Jugador2) {
+                        //    Equipo1.Zona = 2;
+                        //}
                     }
                 }
 

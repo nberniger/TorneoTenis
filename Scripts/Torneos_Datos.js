@@ -27,7 +27,20 @@ function InicializarTorneo2() {
 
     Torneo2.Partidos = [];
 
-    
+    var Partido1 = {};
+    Partido1.Fase = 'Zona 1';
+    Partido1.Fecha = 'Sabado 16/09/2023 10:00 - Cancha 2';
+    Partido1.Equipo1Jugador1 = 5;
+    Partido1.Equipo1Jugador2 = 4;
+    Partido1.Equipo2Jugador1 = 8;
+    Partido1.Equipo2Jugador2 = 1;
+    Partido1.Set1_Puntos_Equipo1 = 0;
+    Partido1.Set1_Puntos_Equipo2 = 0;
+    Partido1.Set2_Puntos_Equipo1 = 0;
+    Partido1.Set2_Puntos_Equipo2 = 0;
+    Partido1.Set3_Puntos_Equipo1 = 0;
+    Partido1.Set3_Puntos_Equipo2 = 0;
+    Torneo2.Partidos.push(Partido1);
 
 
 }

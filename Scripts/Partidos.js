@@ -193,13 +193,15 @@ function JugadorJugoPartido(Partido, JugadorID) {
 function EquipoJugoPartido(Partido, Jugador1ID, Jugador2ID) {
 
     if (
-        (Partido.Equipo1Jugador1 == Jugador1ID && Partido.Equipo1Jugador2 == Jugador2ID)
-        ||
-        (Partido.Equipo1Jugador1 == Jugador2ID && Partido.Equipo1Jugador2 == Jugador1ID)
-        ||
-        (Partido.Equipo2Jugador1 == Jugador1ID && Partido.Equipo2Jugador2 == Jugador2ID)
-        ||
-        (Partido.Equipo2Jugador1 == Jugador2ID && Partido.Equipo2Jugador2 == Jugador1ID)
+        (
+            (Partido.Equipo1Jugador1 == Jugador1ID && Partido.Equipo1Jugador2 == Jugador2ID)
+            ||
+            (Partido.Equipo1Jugador1 == Jugador2ID && Partido.Equipo1Jugador2 == Jugador1ID)
+            ||
+            (Partido.Equipo2Jugador1 == Jugador1ID && Partido.Equipo2Jugador2 == Jugador2ID)
+            ||
+            (Partido.Equipo2Jugador1 == Jugador2ID && Partido.Equipo2Jugador2 == Jugador1ID)
+        ) && (Partido.Set1_Puntos_Equipo1 > 0 || Partido.Set1_Puntos_Equipo2 > 0)
     ) {
         return true;
     } else {
