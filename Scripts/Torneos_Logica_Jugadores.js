@@ -114,23 +114,29 @@ function JugadorGanoTorneo(TorneoID, JugadorID) {
 
     var Torneo = ObtenerTorneo(TorneoID);
 
-    var Jugadores = ObtenerJugadoresTorneo(Torneo);
+    if (Torneo.Finalizado) {
+        var Jugadores = ObtenerJugadoresTorneo(Torneo);
 
-    var JugadorMasGano = null;
-    var MaximaCantidadPartidos = 0;
+        var JugadorMasGano = null;
+        var MaximaCantidadPartidos = 0;
 
-    for (var i = 0; i < Jugadores.length; i++) {
+        for (var i = 0; i < Jugadores.length; i++) {
 
-        var CantidadGanados = ObtenerCantidadPartidosGanadosTorneoJugador(TorneoID, Jugadores[i])
+            var CantidadGanados = ObtenerCantidadPartidosGanadosTorneoJugador(TorneoID, Jugadores[i])
 
-        if ((CantidadGanados > MaximaCantidadPartidos) || (CantidadGanados == MaximaCantidadPartidos && JugadorMasGano != JugadorID)) {
-            JugadorMasGano = Jugadores[i];
-            MaximaCantidadPartidos = CantidadGanados;
+            if ((CantidadGanados > MaximaCantidadPartidos) || (CantidadGanados == MaximaCantidadPartidos && JugadorMasGano != JugadorID)) {
+                JugadorMasGano = Jugadores[i];
+                MaximaCantidadPartidos = CantidadGanados;
+            }
+
         }
 
+        return JugadorMasGano == JugadorID;
+    } else {
+        return false;
     }
 
-    return JugadorMasGano == JugadorID;
+    
 
 }
 
