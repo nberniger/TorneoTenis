@@ -76,9 +76,15 @@ function InicializarJugadores() {
 
     var Jugador13 = {};
     Jugador13.ID = 13;
-    Jugador13.Nombre = 'Fernando';
+    Jugador13.Nombre = 'Fernando Arce';
     Jugador13.NombreImagen = null;
     Jugadores.push(Jugador13);
+
+    var Jugador14 = {};
+    Jugador14.ID = 14;
+    Jugador14.Nombre = 'Leonel Di Paolo';
+    Jugador14.NombreImagen = null;
+    Jugadores.push(Jugador14);
 
     
 }
