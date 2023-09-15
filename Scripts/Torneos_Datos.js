@@ -64,7 +64,7 @@ function InicializarTorneo2() {
 
     var Partido3 = {};
     Partido3.Fase = 'Zona 2';
-    Partido3.Fecha = 'Miercoles 20/09/2023 20:00';
+    Partido3.Fecha = 'Miercoles 20/09/2023 20:00 - Cancha 4';
     Partido3.Equipo1Jugador1 = 2;
     Partido3.Equipo1Jugador2 = 3;
     Partido3.Equipo2Jugador1 = 11;
