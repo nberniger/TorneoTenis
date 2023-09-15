@@ -62,12 +62,11 @@ function InicializarTorneo2() {
     Partido2.Set3_Puntos_Equipo2 = 0;
     Torneo2.Partidos.push(Partido2);
 
-
     var Partido3 = {};
     Partido3.Fase = 'Zona 2';
-    Partido3.Fecha = 'Jueves 21/09/2023 19:00';
-    Partido3.Equipo1Jugador1 = 6;
-    Partido3.Equipo1Jugador2 = 15;
+    Partido3.Fecha = 'Miercoles 20/09/2023 20:00';
+    Partido3.Equipo1Jugador1 = 2;
+    Partido3.Equipo1Jugador2 = 3;
     Partido3.Equipo2Jugador1 = 11;
     Partido3.Equipo2Jugador2 = 14;
     Partido3.Set1_Puntos_Equipo1 = 0;
@@ -77,6 +76,23 @@ function InicializarTorneo2() {
     Partido3.Set3_Puntos_Equipo1 = 0;
     Partido3.Set3_Puntos_Equipo2 = 0;
     Torneo2.Partidos.push(Partido3);
+
+    var Partido4 = {};
+    Partido4.Fase = 'Zona 2';
+    Partido4.Fecha = 'Jueves 21/09/2023 19:00';
+    Partido4.Equipo1Jugador1 = 6;
+    Partido4.Equipo1Jugador2 = 15;
+    Partido4.Equipo2Jugador1 = 11;
+    Partido4.Equipo2Jugador2 = 14;
+    Partido4.Set1_Puntos_Equipo1 = 0;
+    Partido4.Set1_Puntos_Equipo2 = 0;
+    Partido4.Set2_Puntos_Equipo1 = 0;
+    Partido4.Set2_Puntos_Equipo2 = 0;
+    Partido4.Set3_Puntos_Equipo1 = 0;
+    Partido4.Set3_Puntos_Equipo2 = 0;
+    Torneo2.Partidos.push(Partido4);
+
+    
 
    
 
