@@ -90,7 +90,7 @@ function ObtenerEquiposTorneo(TorneoID) {
                         //}
                     }
 
-                    for (var z = 0; z < Torneos[i].EquiposZona1.length; z++) {
+                    for (var z = 0; z < Torneos[i].EquiposZona2.length; z++) {
                         if (EquiposIguales(Torneos[i].EquiposZona2[z], Equipo1)) {
                             Equipo1.Zona = 2;
                         }
