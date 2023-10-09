@@ -84,9 +84,9 @@ function InicializarTorneo2() {
     Partido4.Equipo2Jugador1 = 3;
     Partido4.Equipo2Jugador2 = 8;
     Partido4.Set1_Puntos_Equipo1 = 6;
-    Partido4.Set1_Puntos_Equipo2 = 0;
+    Partido4.Set1_Puntos_Equipo2 = 1;
     Partido4.Set2_Puntos_Equipo1 = 6;
-    Partido4.Set2_Puntos_Equipo2 = 0;
+    Partido4.Set2_Puntos_Equipo2 = 1;
     Partido4.Set3_Puntos_Equipo1 = 0;
     Partido4.Set3_Puntos_Equipo2 = 0;
     Torneo2.Partidos.push(Partido4);
@@ -99,9 +99,9 @@ function InicializarTorneo2() {
     Partido5.Equipo2Jugador1 = 6;
     Partido5.Equipo2Jugador2 = 15;
     Partido5.Set1_Puntos_Equipo1 = 6;
-    Partido5.Set1_Puntos_Equipo2 = 1;
+    Partido5.Set1_Puntos_Equipo2 = 0;
     Partido5.Set2_Puntos_Equipo1 = 6;
-    Partido5.Set2_Puntos_Equipo2 = 1;
+    Partido5.Set2_Puntos_Equipo2 = 0;
     Partido5.Set3_Puntos_Equipo1 = 0;
     Partido5.Set3_Puntos_Equipo2 = 0;
     Torneo2.Partidos.push(Partido5);
