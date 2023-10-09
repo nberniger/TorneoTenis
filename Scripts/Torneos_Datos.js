@@ -22,7 +22,7 @@ function InicializarTorneo2() {
     //Torneo2.JugadoresZona2 = [11, 12, 3, 2, 13, 6];
     Torneo2.EquiposZona1 = [{ Jugador1: 7, Jugador2: 10, Zona: 1 }, { Jugador1: 3, Jugador2: 8, Zona: 1 }, { Jugador1: 4, Jugador2: 5, Zona: 1 }];
     /*Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 14, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona: 2 }];*/
-    Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 14, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 15, Jugador2: 6, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona: 2 }];
+    Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 14, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 15, Jugador2: 6, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona: 2 }, { Jugador1: 3, Jugador2: 8, Zona: 2 }];
     Torneo2.Finalizado = false;
     Torneos.push(Torneo2);
 
@@ -61,20 +61,20 @@ function InicializarTorneo2() {
     Partido2.Set3_Puntos_Equipo2 = 0;
     Torneo2.Partidos.push(Partido2);
 
-    //var Partido3 = {};
-    //Partido3.Fase = 'Zona 2';
-    //Partido3.Fecha = 'Jueves 21/09/2023 19:00';
-    //Partido3.Equipo1Jugador1 = 6;
-    //Partido3.Equipo1Jugador2 = 15;
-    //Partido3.Equipo2Jugador1 = 11;
-    //Partido3.Equipo2Jugador2 = 14;
-    //Partido3.Set1_Puntos_Equipo1 = 0;
-    //Partido3.Set1_Puntos_Equipo2 = 0;
-    //Partido3.Set2_Puntos_Equipo1 = 0;
-    //Partido3.Set2_Puntos_Equipo2 = 0;
-    //Partido3.Set3_Puntos_Equipo1 = 0;
-    //Partido3.Set3_Puntos_Equipo2 = 0;
-    //Torneo2.Partidos.push(Partido3);
+    var Partido3 = {};
+    Partido3.Fase = 'Zona A';
+    Partido3.Fecha = 'Sabado 07/10/2023 09:00 - Cancha 4';
+    Partido3.Equipo1Jugador1 = 7;
+    Partido3.Equipo1Jugador2 = 10;
+    Partido3.Equipo2Jugador1 = 4;
+    Partido3.Equipo2Jugador2 = 5;
+    Partido3.Set1_Puntos_Equipo1 = 6;
+    Partido3.Set1_Puntos_Equipo2 = 4;
+    Partido3.Set2_Puntos_Equipo1 = 6;
+    Partido3.Set2_Puntos_Equipo2 = 7;
+    Partido3.Set3_Puntos_Equipo1 = 10;
+    Partido3.Set3_Puntos_Equipo2 = 5;
+    Torneo2.Partidos.push(Partido3);
        
 
 }

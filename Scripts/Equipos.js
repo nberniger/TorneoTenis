@@ -157,8 +157,12 @@ function ObtenerCantidadTorneosGanadosEquipo(Equipo) {
 
 function EquiposIguales(Equipo1, Equipo2) {
 
-    return ((Equipo1.Jugador1 == Equipo2.Jugador1 && Equipo1.Jugador2 == Equipo2.Jugador2) || (Equipo1.Jugador1 == Equipo2.Jugador2 && Equipo1.Jugador2 == Equipo2.Jugador1))
-    
+    return (
+                (
+                    (Equipo1.Jugador1 == Equipo2.Jugador1 && Equipo1.Jugador2 == Equipo2.Jugador2) || (Equipo1.Jugador1 == Equipo2.Jugador2 && Equipo1.Jugador2 == Equipo2.Jugador1)
+                ) && Equipo1.Zona == Equipo2.Zona
+            )
+        
 }
 
 
