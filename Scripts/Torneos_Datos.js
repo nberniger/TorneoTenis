@@ -22,7 +22,7 @@ function InicializarTorneo2() {
     //Torneo2.JugadoresZona2 = [11, 12, 3, 2, 13, 6];
     Torneo2.EquiposZona1 = [{ Jugador1: 7, Jugador2: 10, Zona: 1 }, { Jugador1: 3, Jugador2: 8, Zona: 1 }, { Jugador1: 4, Jugador2: 5, Zona: 1 }];
     /*Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 14, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona: 2 }];*/
-    Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 14, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 15, Jugador2: 6, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona: 2 }, { Jugador1: 3, Jugador2: 8, Zona: 2 }];
+    Torneo2.EquiposZona2 = [{ Jugador1: 11, Jugador2: 14, Zona: 2 }, { Jugador1: 3, Jugador2: 2, Zona: 2 }, { Jugador1: 15, Jugador2: 6, Zona: 2 }, { Jugador1: 13, Jugador2: 6, Zona: 2 }, { Jugador1: 3, Jugador2: 8, Zona: 2 }, { Jugador1: 11, Jugador2: 16, Zona: 2 }];
     Torneo2.Finalizado = false;
     Torneos.push(Torneo2);
 
@@ -75,6 +75,36 @@ function InicializarTorneo2() {
     Partido3.Set3_Puntos_Equipo1 = 10;
     Partido3.Set3_Puntos_Equipo2 = 5;
     Torneo2.Partidos.push(Partido3);
+
+    var Partido4 = {};
+    Partido4.Fase = 'Zona B';
+    Partido4.Fecha = '';
+    Partido4.Equipo1Jugador1 = 11;
+    Partido4.Equipo1Jugador2 = 16;
+    Partido4.Equipo2Jugador1 = 3;
+    Partido4.Equipo2Jugador2 = 8;
+    Partido4.Set1_Puntos_Equipo1 = 6;
+    Partido4.Set1_Puntos_Equipo2 = 0;
+    Partido4.Set2_Puntos_Equipo1 = 6;
+    Partido4.Set2_Puntos_Equipo2 = 0;
+    Partido4.Set3_Puntos_Equipo1 = 0;
+    Partido4.Set3_Puntos_Equipo2 = 0;
+    Torneo2.Partidos.push(Partido4);
+
+    var Partido5 = {};
+    Partido5.Fase = 'Zona B';
+    Partido5.Fecha = '';
+    Partido5.Equipo1Jugador1 = 11;
+    Partido5.Equipo1Jugador2 = 16;
+    Partido5.Equipo2Jugador1 = 6;
+    Partido5.Equipo2Jugador2 = 15;
+    Partido5.Set1_Puntos_Equipo1 = 6;
+    Partido5.Set1_Puntos_Equipo2 = 1;
+    Partido5.Set2_Puntos_Equipo1 = 6;
+    Partido5.Set2_Puntos_Equipo2 = 1;
+    Partido5.Set3_Puntos_Equipo1 = 0;
+    Partido5.Set3_Puntos_Equipo2 = 0;
+    Torneo2.Partidos.push(Partido5);
        
 
 }

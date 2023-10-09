@@ -92,6 +92,13 @@ function InicializarJugadores() {
     Jugador15.NombreImagen = null;
     Jugadores.push(Jugador15);
 
+
+    var Jugador16 = {};
+    Jugador16.ID = 16;
+    Jugador16.Nombre = 'Monica';
+    Jugador16.NombreImagen = null;
+    Jugadores.push(Jugador16);
+
     
 }
 
